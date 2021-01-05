@@ -1,0 +1,9 @@
+name = "VCF"
+uuid = "8f8d80d9-e796-45a3-8ef2-c0461a3110a4"
+authors = ["KatharineME <katharine.me@icloud.com>"]
+version = "0.1.0"
+
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
