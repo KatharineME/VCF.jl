@@ -1,4 +1,4 @@
-module VCF
+module VCFTool
 
 include("read_vcf.jl")
 

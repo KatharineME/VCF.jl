@@ -1,4 +1,4 @@
-name = "VCF"
+name = "VCFTool"
 uuid = "8f8d80d9-e796-45a3-8ef2-c0461a3110a4"
 authors = ["KatharineME <katharine.me@icloud.com>"]
 version = "0.1.0"
