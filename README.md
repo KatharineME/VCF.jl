@@ -5,7 +5,7 @@ Module for acessing .vcf(.gz).
 ```julia
 using Pkg: add
 
-add(url="https://github.com/KatharineME/VCF.jl")
+add(url="https://github.com/KatharineME/VCFTool.jl")
 ```
 
 ## Use
