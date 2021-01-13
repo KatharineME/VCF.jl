@@ -10,7 +10,7 @@ function read_vcf(path::String)::DataFrame
 
     df = DataFrame(File(io2; comment="##", delim='\t', header=1))
     
-    rename(df, ("#CHROM" => "CHROM"))
+    df = rename(df, ("#CHROM" => "CHROM"))
 
     close(io)
 
