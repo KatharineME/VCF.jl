@@ -1,6 +1,6 @@
 using CodecZlib: GzipDecompressorStream
 using CSV: File
-using DataFrames: DataFrame
+using DataFrames: DataFrame, rename
 
 function read_vcf(path::String)::DataFrame
     
