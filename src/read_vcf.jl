@@ -9,6 +9,8 @@ function read_vcf(path::String)::DataFrame
     io2 = GzipDecompressorStream(io)
 
     df = DataFrame(File(io2; comment="##", delim='\t', header=1))
+    
+    rename(df, ("#CHROM" => "CHROM"))
 
     close(io)
 
