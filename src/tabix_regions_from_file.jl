@@ -12,7 +12,7 @@ function tabix_regions_from_file(
     
     output_file_path = joinpath(output_dir, bed_name)
     
-    print_and_run_cmd(`tabix -R $bed_file_path $vcf_file_path`, output_file_path)
+    print_and_run_cmd(`tabix -R $bed_file_path $vcf_file_path > $output_file_path`)
     
 end
 
