@@ -6,6 +6,10 @@ input/*
 
 !input/.gitkeep
 
+!input/example.vcf.gz
+
+!input/example.vcf.gz.tbi
+
 output/*
 
 !output/.gitkeep
