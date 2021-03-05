@@ -1,4 +1,4 @@
-Module for acessing .vcf(.gz).
+Module for acessing .vcf files.
 
 ## Install
 
