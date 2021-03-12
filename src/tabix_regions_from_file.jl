@@ -19,6 +19,8 @@ function tabix_regions_from_file(
 
     bed = DataFrame(File(bed_io; delim='\t', header=false))
 
+    println("bed file: \n")
+
     println(bed)
 
     println("\n")
@@ -32,6 +34,8 @@ function tabix_regions_from_file(
     output_file_path = joinpath(output_dir, bed_name)
     
     print_and_run_cmd(pipeline(`tabix -R $bed_file_path $vcf_file_path`, stdout="$output_file_path.tsv"))
+
+    println("Saved output at: $output_file_path")
 
     end_time = now()
     
