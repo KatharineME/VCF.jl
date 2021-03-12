@@ -35,7 +35,7 @@ function tabix_regions_from_file(
     
     print_and_run_cmd(pipeline(`tabix -R $bed_file_path $vcf_file_path`, stdout="$output_file_path.tsv"))
 
-    println("Saved output at: $output_file_path")
+    println("\nSaved output at: $output_file_path.tsv")
 
     end_time = now()
     
