@@ -24,7 +24,7 @@ function query_regions(
         query = @from i in vcf begin
             @where i.CHROM==key
             @where i.POS==value
-            @select {i.CHROM, i.POS, i.REF, i.ALT, i.FORMAT, i.Germ}
+            @select {i.CHROM, i.POS, i.REF, i.ALT, i.FORMAT}
             @collect DataFrame
 
         end
