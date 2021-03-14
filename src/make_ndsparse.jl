@@ -3,9 +3,15 @@ using CSV: File
 
 
 
-
 function make_ndsparse(vcf_gz_file_path::String)
 
+
+    io = open(vcf_gz_file_path)
+
+    io2 = GzipDecompressorStream(io)
+
+    file = File(io2; comment="##", delim='\t', header=1))
+    
     vcf_ndsparse = loadndsparse(
         joinpath(input_dir, "738_variants.vcf"),
         delim='\t',
@@ -15,6 +21,7 @@ function make_ndsparse(vcf_gz_file_path::String)
         indexcols=[:CHROM, :POS]
         )
 
+    close(io)
 
 
 end 
