@@ -2,7 +2,7 @@ using CodecZlib: GzipDecompressorStream
 using CSV
 using JuliaDB
 
-function make_ndsparse(vcf_gz_file_path::String)
+function make_vcf_ndsparse(vcf_gz_file_path::String)
     
     vcf_file_path = string(Array(split(vcf_gz_file_path, ".gz"))[1])
 
@@ -32,4 +32,4 @@ function make_ndsparse(vcf_gz_file_path::String)
 
 end
 
-export make_ndsparse 
+export make_vcf_ndsparse 

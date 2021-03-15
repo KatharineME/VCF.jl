@@ -2,7 +2,7 @@ using CodecZlib: GzipDecompressorStream
 using CSV: File
 using DataFrames: DataFrame, rename
 
-function read_vcf(path::String)::DataFrame
+function make_vcf_dataframe(path::String)::DataFrame
     
     io = open(path)
 
@@ -18,4 +18,4 @@ function read_vcf(path::String)::DataFrame
 
 end 
 
-export read_vcf
+export vcf_dataframe 
