@@ -2,7 +2,6 @@ using CodecZlib: GzipDecompressorStream
 using CSV: File
 
 
-
 function make_ndsparse(vcf_gz_file_path::String)
 
 
