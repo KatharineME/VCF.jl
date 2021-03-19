@@ -74,7 +74,7 @@ function make_vcf_indexedtable(vcf_gz_file_path)
 
     # Reindex
 
-    reindex(vcf_table, (:CHROM, :POS))
+    vcf_table = reindex(vcf_table, (:CHROM, :POS))
 
 
     return vcf_table
