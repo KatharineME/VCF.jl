@@ -1,6 +1,8 @@
 using CodecZlib: GzipDecompressorStream
 using CSV
 using JuliaDB
+using IndexedTables
+
 
 function make_vcf_ndsparse(vcf_gz_file_path::String)
     
@@ -25,9 +27,13 @@ function make_vcf_ndsparse(vcf_gz_file_path::String)
         delim='\t',
         header_exists=false,  
         colnames=[:CHROM, :POS, :ID, :REF, :ALT, :QUAL, :FILTER, :INFO, :FORMAT, :GERM],
-        indexcols=[:CHROM, :POS]
         )
+
     
+    n_rows = length(rows(vcf_ndsparse))
+
+    vcf_ndsparse = vcf_ndsparse[2:n_rows]
+ 
     return vcf_ndsparse
 
 end
