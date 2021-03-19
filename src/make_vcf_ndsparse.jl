@@ -34,6 +34,7 @@ function make_vcf_ndsparse(vcf_gz_file_path::String)
 
     vcf_ndsparse = vcf_ndsparse[2:n_rows]
  
+
     return vcf_ndsparse
 
 end
