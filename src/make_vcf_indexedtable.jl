@@ -54,7 +54,7 @@ function make_vcf_indexedtable(vcf_gz_file_path)
 
     end
 
-    vcf_table = transform(vcf_table, :CHROM => chromosomes_numeric)
+    vcf_table = IndexedTables.transform(vcf_table, :CHROM => chromosomes_numeric)
 
 
     # Convert positions to numbers
@@ -69,7 +69,7 @@ function make_vcf_indexedtable(vcf_gz_file_path)
         
     end
 
-    vcf_table = transform(vcf_table, :POS => positions_numeric)
+    vcf_table = IndexedTables.transform(vcf_table, :POS => positions_numeric)
 
 
     # Reindex
