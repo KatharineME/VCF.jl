@@ -6,7 +6,7 @@ function get_genotype_of_vcf_ndsparse(chromosome_number::Integer, position::Inte
 
     start_time = now()
 
-    for value in vcf["chr17", 7661779]
+    for value in vcf[chromosome_number, position]
         
         genotype = []
         
