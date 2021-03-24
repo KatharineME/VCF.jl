@@ -46,12 +46,11 @@ function get_genotype_of_vcf_ndsparse(chromosome_number::Integer, position::Inte
 
         return genotype       
  
-end_time = now()
+    end_time = now()
 
-println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
+    println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
 
 end
-
 
 export get_genotype_of_vcf_ndsparse
 

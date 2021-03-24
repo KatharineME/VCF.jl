@@ -6,6 +6,8 @@ using IndexedTables
 
 function make_vcf_ndsparse(vcf_gz_file_path::String)
     
+    start_time = now()
+
     vcf_file_path = string(Array(split(vcf_gz_file_path, ".gz"))[1])
 
     if isfile(vcf_file_path) == false
@@ -36,6 +38,10 @@ function make_vcf_ndsparse(vcf_gz_file_path::String)
  
 
     return vcf_ndsparse
+
+    end_time = now()
+
+    println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
 
 end
 

@@ -1,10 +1,13 @@
 using CodecZlib: GzipDecompressorStream
 using CSV
+using Dates
 using JuliaDB
 using IndexedTables
 
 
 function make_vcf_indexedtable(vcf_gz_file_path)
+
+    start_time = now()
     
     vcf_file_path = string(Array(split(vcf_gz_file_path, ".gz"))[1])
 
@@ -79,7 +82,12 @@ function make_vcf_indexedtable(vcf_gz_file_path)
 
     return vcf_table
 
+    end_time = now()
+
+    println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
+
 end
+
 
 export make_vcf_indexedtable
 
