@@ -44,7 +44,7 @@ function get_genotype_of_vcf_ndsparse(chromosome_number::Integer, position::Inte
             
             end
 
-        return genotype       
+    return genotype       
  
     end_time = now()
 

@@ -1,5 +1,7 @@
 module VCFTool
 
+include("filter_vcf_table.jl")
+
 include("print_and_run_cmd.jl")
 
 include("make_vcf_dataframe.jl")
