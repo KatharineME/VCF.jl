@@ -1,31 +1,33 @@
-using Dates
 using JuliaDB
+using Dates
 
 
-function get_genotype(chromosome_number::Integer, position::Integer)
+function get_genotype(filtered_vcf_table)
 
     start_time = now()
 
-    for value in vcf[chromosome_number, position]
-        
+    genotypes = []
+
+    for row in filtered_vcf_table
+
         genotype = []
-        
-        allele_ref = value[:REF]
-        
-        allele_alt = value[:ALT]
-        
-        numeric_genotype = split(split(value[:GERM], ":")[1], "/")
-        
+
+        allele_ref = row[:REF]
+
+        allele_alt = row[:ALT]
+
+        numeric_genotype = split(split(row[:GERM], ":")[1], "/")
+
         if occursin("|", numeric_genotype[1])
-            
+
             numeric_genotype = split(numeric_genotype[1], "|")
-            
+
         end
-        
+
         counter = 1
-        
+
             while counter < 3
-            
+
                 if "0" == numeric_genotype[counter]
 
                     push!(genotype, allele_ref)
@@ -37,20 +39,24 @@ function get_genotype(chromosome_number::Integer, position::Integer)
                 elseif "2" == numeric_genotype[counter]
 
                     push!(genotype, split(allele_alt, ",")[2])
-            
+
                 end    
-        
+
             counter += 1
-            
+
             end
 
-    return genotype       
- 
+        push!(genotypes, genotype)
+
+    end
+    
+    return genotypes
+
     end_time = now()
 
     println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
 
 end
 
-export get_genotype_of_vcf_ndsparse
+export get_genotype
 
