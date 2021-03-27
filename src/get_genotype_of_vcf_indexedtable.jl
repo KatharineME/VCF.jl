@@ -2,7 +2,7 @@ using Dates
 using JuliaDB
 
 
-function get_genotype_of_vcf_ndsparse(chromosome_number::Integer, position::Integer)
+function get_genotype(chromosome_number::Integer, position::Integer)
 
     start_time = now()
 
