@@ -64,22 +64,20 @@ function make_vcf_indexedtable(vcf_gz_file_path)
         # Convert chromosome strings to chromosome numbers
 
 #        chromosomes_string = Array(columns(vcf_table)[1])
-#
-#        chromosomes_numeric = []
-#
+
+#        chromosomes_int = []
+
 #        for item in chromosomes_string
-#
-#            if 
-#
-#            parts = split(item, "")
-#
-#            chromosome_number = parts[length(parts)]
-#
-#            push!(chromosomes_numeric, parse(Int, chromosome_number))
-#
+
+#           parts = split(item, "")
+
+#           number = parts[length(parts)]
+
+#           push!(chromosomes_int, parse(Int, number))
+
 #        end
-#
-#        vcf_table = IndexedTables.transform(vcf_table, :CHROM => chromosomes_numeric)
+
+#        vcf_table = IndexedTables.transform(vcf_table, :CHROM => chromosomes_int);
 
         # Convert positions to numbers
 
