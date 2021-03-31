@@ -34,12 +34,18 @@ function make_vcf_indexedtable(vcf_gz_file_path)
     vcf_dagger_file_path = vcf_file_path * ".dagger"
     
     if isfile(vcf_dagger_file_path) == true
+
+        println("Loading Dagger file...\n")
         
         vcf_table = load(vcf_dagger_file_path)
    
+        println("Dagger file loaded.")
+
     # Create table if Dagger file doesn't exist
         
     else
+
+        println("No Dagger file, loading table...\n")
     
         vcf_table = loadtable(
             vcf_file_path,
@@ -96,6 +102,8 @@ function make_vcf_indexedtable(vcf_gz_file_path)
         # Save Dagger file
         
         save(vcf_table, vcf_dagger_file_path)
+
+        println("Table loaded.")
 
     end
     
