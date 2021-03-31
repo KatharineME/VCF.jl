@@ -1,6 +1,9 @@
 using CodecZlib: GzipDecompressorStream
+
 using CSV: File
+
 using DataFrames: DataFrame, rename
+
 
 function make_vcf_dataframe(path::String)::DataFrame
     
@@ -17,5 +20,6 @@ function make_vcf_dataframe(path::String)::DataFrame
     return df
 
 end 
+
 
 export vcf_dataframe 

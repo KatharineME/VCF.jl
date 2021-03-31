@@ -1,8 +1,9 @@
 using Dates
+
 using JuliaDB
 
 
-function filter_vcf_table(vcf_table, chromosome::Int64, start_position::Int64, end_position::Int64)
+function filter_vcf_table(vcf_table, chromosome, start_position::Int64, end_position::Int64)
     
     start_time = now()
    
@@ -15,6 +16,7 @@ function filter_vcf_table(vcf_table, chromosome::Int64, start_position::Int64, e
     println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
     
 end
+
 
 export filter_vcf_table
 

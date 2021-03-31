@@ -1,6 +1,9 @@
 using CSV: File
+
 using DataFrames
+
 using Dates
+
 using Query 
 
 
@@ -37,5 +40,6 @@ function query_regions(
     println("\nTook $(canonicalize(Dates.CompoundPeriod(end_time - start_time))).\n")
     
 end
+
 
 export query_regions

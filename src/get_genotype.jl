@@ -59,5 +59,6 @@ function get_genotype(filtered_vcf_table)
 
 end
 
+
 export get_genotype
 
