@@ -1,7 +1,11 @@
 using CodecZlib: GzipDecompressorStream
+
 using CSV
+
 using Dates
+
 using JuliaDB
+
 using IndexedTables
 
 
@@ -53,21 +57,23 @@ function make_vcf_indexedtable(vcf_gz_file_path)
 
         # Convert chromosome strings to chromosome numbers
 
-        chromosomes_string = Array(columns(vcf_table)[1])
-
-        chromosomes_numeric = []
-
-        for item in chromosomes_string
-
-            parts = split(item, "")
-
-            chromosome_number = parts[length(parts)]
-
-            push!(chromosomes_numeric, parse(Int, chromosome_number))
-
-        end
-
-        vcf_table = IndexedTables.transform(vcf_table, :CHROM => chromosomes_numeric)
+#        chromosomes_string = Array(columns(vcf_table)[1])
+#
+#        chromosomes_numeric = []
+#
+#        for item in chromosomes_string
+#
+#            if 
+#
+#            parts = split(item, "")
+#
+#            chromosome_number = parts[length(parts)]
+#
+#            push!(chromosomes_numeric, parse(Int, chromosome_number))
+#
+#        end
+#
+#        vcf_table = IndexedTables.transform(vcf_table, :CHROM => chromosomes_numeric)
 
         # Convert positions to numbers
 
