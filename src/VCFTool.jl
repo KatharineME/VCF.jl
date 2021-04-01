@@ -12,7 +12,7 @@ include("make_vcf_indexedtable.jl")
 
 include("make_vcf_ndsparse.jl")
 
-include("search_region.jl")
+include("search_region_with_julia.jl")
 
 include("tabix_regions_from_file.jl")
 

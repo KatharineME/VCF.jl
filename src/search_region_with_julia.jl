@@ -3,7 +3,7 @@ using JuliaDB
 using Dates
 
 
-function search_region(vcf_dagger_file_path, chromosome, start_position::Int64, end_position::Int64)
+function search_region_with_julia(vcf_dagger_file_path, chromosome, start_position::Int64, end_position::Int64)
     
     start_time = now()
     
@@ -38,4 +38,4 @@ function search_region(vcf_dagger_file_path, chromosome, start_position::Int64, 
 end
 
 
-export search_region
+export search_region_with_julia
