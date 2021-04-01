@@ -2,10 +2,6 @@ using JuliaDB
 
 using Dates
 
-include("get_genotype.jl")
-
-include("filter_vcf_table.jl")
-
 
 function search_region(vcf_dagger_file_path, chromosome, start_position::Int64, end_position::Int64)
     
